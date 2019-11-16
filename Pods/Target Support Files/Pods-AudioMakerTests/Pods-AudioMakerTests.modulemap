@@ -1,0 +1,6 @@
+framework module Pods_AudioMakerTests {
+  umbrella header "Pods-AudioMakerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
