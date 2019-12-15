@@ -8,6 +8,8 @@ target 'AudioMaker' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
   # Pods for AudioMaker
 
   target 'AudioMakerTests' do
