@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pow-CG-3rf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recording-->
+        <!--新規投稿-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="AudioMaker" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,43 +15,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87M-X9-Nwp">
-                                <rect key="frame" x="108" y="142" width="198" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VC-lh-9si">
-                                <rect key="frame" x="234" y="591" width="138" height="70"/>
+                                <rect key="frame" x="78" y="604" width="258" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.70831775314049628" green="0.76594780809012764" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="PLAY"/>
                                 <connections>
                                     <action selector="play" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJh-ka-0ZO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-zE-GzY">
-                                <rect key="frame" x="40" y="591" width="138" height="70"/>
+                                <rect key="frame" x="78" y="499" width="258" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63757661575923297" green="0.83419926910836084" blue="0.77872706022045057" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="RECORD"/>
                                 <connections>
                                     <action selector="record" destination="BYZ-38-t0r" eventType="touchUpInside" id="sT7-bS-0Qx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0F-u7-nQw">
-                                <rect key="frame" x="138" y="693" width="138" height="70"/>
+                                <rect key="frame" x="78" y="713" width="258" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ready to Update"/>
+                                <color key="backgroundColor" red="0.93686548223350252" green="0.78622100787042182" blue="0.91786270610264709" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="DONE!"/>
                                 <connections>
-                                    <action selector="readyToUpdate" destination="BYZ-38-t0r" eventType="touchUpInside" id="uiB-9J-xxV"/>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6lo-c6-YOR"/>
                                     <segue destination="g1B-YU-0ei" kind="show" identifier="Update" id="hGq-X3-RHf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87M-X9-Nwp">
+                                <rect key="frame" x="66" y="216" width="283" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Recording" id="MbC-Z9-xBE"/>
+                    <navigationItem key="navigationItem" title="新規投稿" id="MbC-Z9-xBE"/>
                     <connections>
                         <outlet property="label" destination="87M-X9-Nwp" id="V6m-zG-BQT"/>
                         <outlet property="playButton" destination="7VC-lh-9si" id="HPw-OZ-3P6"/>
@@ -60,25 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="130"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wD3-9a-MU0">
-            <objects>
-                <tabBarController id="VTs-qk-Xff" sceneMemberID="viewController">
-                    <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="music.house.fill" catalog="system" id="gwT-MI-xux">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="qj8-vs-fCE" kind="relationship" relationship="viewControllers" id="8kD-cq-oYh"/>
-                        <segue destination="r15-Xd-kzN" kind="relationship" relationship="viewControllers" id="e6f-JQ-KUt"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JUI-RH-r0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="74" y="848"/>
+            <point key="canvasLocation" x="1346.376811594203" y="129.91071428571428"/>
         </scene>
         <!--Update View Controller-->
         <scene sceneID="YyV-65-bga">
@@ -88,18 +79,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTj-nN-0f5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTj-nN-0f5">
                                 <rect key="frame" x="67" y="212" width="280" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.3945847602739726" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55a-nG-SlZ">
-                                <rect key="frame" x="129" y="629" width="156" height="73"/>
+                                <rect key="frame" x="67" y="604" width="280" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update"/>
+                                <color key="backgroundColor" red="0.92377855329949232" green="0.72076124125818142" blue="0.60119621452989025" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="UPDATE"/>
                                 <connections>
-                                    <action selector="add:" destination="g1B-YU-0ei" eventType="touchUpInside" id="i4o-pp-I45"/>
+                                    <action selector="update" destination="g1B-YU-0ei" eventType="touchUpInside" id="NJH-my-sKf"/>
+                                    <segue destination="r15-Xd-kzN" kind="presentation" id="irk-5D-dbl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +104,9 @@
                         <viewLayoutGuide key="safeArea" id="uVw-rn-Mw3"/>
                     </view>
                     <navigationItem key="navigationItem" id="dbX-zN-sP5"/>
+                    <connections>
+                        <outlet property="textView" destination="gTj-nN-0f5" id="DBN-Gq-Ici"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fH-Qo-5v2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,7 +149,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doNewRegister" destination="Pow-CG-3rf" eventType="touchUpInside" id="ypZ-Jf-Svu"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="welcome" id="zZI-WL-ync"/>
+                                    <segue destination="r15-Xd-kzN" kind="presentation" identifier="welcome" id="HWV-tB-iqY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-5c-BYD">
@@ -162,7 +162,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doLogin" destination="Pow-CG-3rf" eventType="touchUpInside" id="cyr-5I-f4I"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="gohome" id="AbU-eD-6rF"/>
+                                    <segue destination="r15-Xd-kzN" kind="presentation" identifier="gohome" id="0oa-ZS-C5R"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -181,13 +181,13 @@
         <!--Home-->
         <scene sceneID="KcU-4q-IUj">
             <objects>
-                <viewController id="r15-Xd-kzN" customClass="HomeTableViewController" customModule="AudioMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="r15-Xd-kzN" customClass="HomeViewController" customModule="AudioMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kiW-aQ-NSq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="94" id="zHv-xu-gyH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="94" id="zHv-xu-gyH">
                                 <rect key="frame" x="0.0" y="28" width="414" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zHv-xu-gyH" id="sXR-4s-xcD">
@@ -198,7 +198,19 @@
                         </prototypes>
                     </tableView>
                     <tabBarItem key="tabBarItem" tag="1" title="Home" selectedImage="music.house.fill" catalog="system" id="dsj-gT-f2T"/>
+                    <toolbarItems>
+                        <barButtonItem title="投稿" id="2gg-mA-F3e">
+                            <connections>
+                                <action selector="add" destination="r15-Xd-kzN" id="984-qZ-5WL"/>
+                                <segue destination="qj8-vs-fCE" kind="presentation" id="Hev-UK-B7m"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Home" id="5xV-pv-QNJ"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="kiW-aQ-NSq" id="u10-oP-iyJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pP6-Zr-wC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,7 +219,7 @@
         <!--Record-->
         <scene sceneID="2gb-kC-vlb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qj8-vs-fCE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="qj8-vs-fCE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Record" selectedImage="mic.circle.fill" catalog="system" id="CSH-8E-A9A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rPR-yT-DVQ">
@@ -229,6 +241,6 @@
         <image name="music.house.fill" catalog="system" width="64" height="52"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="daI-DO-0wl"/>
+        <segue reference="irk-5D-dbl"/>
     </inferredMetricsTieBreakers>
 </document>

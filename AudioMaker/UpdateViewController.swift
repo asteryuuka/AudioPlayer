@@ -15,24 +15,37 @@ class UpdateViewController: UIViewController {
     var ref: DatabaseReference!
     var save: Save!
     var storage = Storage.storage()
+    var audioURL: URL?
+    
+    @IBOutlet var textView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-  
+    func setupTextView() {
+        let toolBar = UIToolbar()
+        let flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        toolBar.items = [flexibleSpaceBarButton, doneButton]
+        toolBar.sizeToFit()
+        textView.inputAccessoryView = toolBar
+    }
+
+    @objc func dismissKeyboard() {
+       textView.resignFirstResponder()
+    }
     
-//音源保存の仕方を配列にする。配列を画面遷移で渡すslack参照。
-    //次の画面でコメントの値保存。
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    @IBAction func update() {
+        let comment = textView.text!
+        let db = Firestore.firestore()
+        db.collection("music").addDocument(data: [
+            "comment": comment])
+        { err in
+            if let err = err {
+                print(err)
+            }
+        }
+    }
 }

@@ -16,12 +16,25 @@ class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
+    var auth: Auth!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+         auth = Auth.auth()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           if auth.currentUser != nil {
+               performSegue(withIdentifier: "gohome", sender: auth.currentUser!)
+           }
+       }
+
+//       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//           let nextViewController = segue.destination as! HomeViewController
+//           let user = sender as! User
+//           nextViewController.me = AppUser(data: ["userID": user.uid])
+//       }
     
     
     @IBAction func doNewRegister() {
@@ -60,6 +73,8 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func doLogin() {
         
         let email = emailTextField.text
@@ -68,29 +83,11 @@ class LoginViewController: UIViewController {
         //FirebaseSDK 既存ユーザーのログイン
         Auth.auth().signIn(withEmail: email!, password: password!) { (result, error) in
             if (result?.user) != nil {
-                
                 // 次の画面へ遷移
                 self.performSegue(withIdentifier: "gohome", sender: nil)
             } else if let error = error {
                 print("performError")
-                //                if let errorCode = AuthErrorCode(rawValue: (error as NSError).code) {
-                //
-                //                    switch errorCode {
-                //
-                //                    case .wrongPassword:
-                //                        errorMessage = "入力したパスワードでサインインできません"
-                //                    case .emailAlreadyInUse:
-                //                        errorMessage = "このメールアドレスは既に使われています"
-                //                    default:
-                //                        errorMessage = "通信に失敗しました"
-                //
-                //                    }
-                //
-                //                    let loginAlert = UIAlertController(title: "ログインエラー", message: errorMessage, preferredStyle: .alert)
-                //                    loginAlert.addAction(UIAlertAction(title: "OK", style: .default))
-                //                    self.present(loginAlert, animated: true)
-                //
-                //                }
+                
             }
         }
     }
